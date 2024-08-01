@@ -10,22 +10,26 @@ const ExploreProduct = () => {
         {
             icon:IconeOne,
             title:'title h4',
-            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum augue sed tellus accumsan, nec congue quam lacinia. Duis ornare congue ante a facilisis. Vestibulum sed magna in ligula aliquam luctus non in ante. Nullam egestas, nunc at rutrum tincidunt, purus metus malesuada ante, at cursus massa turpis sit amet '
+            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum augue sed tellus accumsan, nec congue quam lacinia. Duis ornare congue ante a facilisis. Vestibulum sed magna in ligula aliquam luctus non in ante. Nullam egestas, nunc at rutrum tincidunt, purus metus malesuada ante, at cursus massa turpis sit amet ',
+            circleText:'Explore products'
         },
         {
             icon:IconeTwo,
             title:'title h4',
-            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum augue sed tellus accumsan, nec congue quam lacinia. Duis ornare congue ante a facilisis. Vestibulum sed magna in ligula aliquam luctus non in ante. Nullam egestas, nunc at rutrum tincidunt, purus metus malesuada ante, at cursus massa turpis sit amet '
+            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum augue sed tellus accumsan, nec congue quam lacinia. Duis ornare congue ante a facilisis. Vestibulum sed magna in ligula aliquam luctus non in ante. Nullam egestas, nunc at rutrum tincidunt, purus metus malesuada ante, at cursus massa turpis sit amet ',
+            circleText:'Explore cool products'
         },
         {
             icon:IconeThree,
             title:'title h4',
-            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum augue sed tellus accumsan, nec congue quam lacinia. Duis ornare congue ante a facilisis. Vestibulum sed magna in ligula aliquam luctus non in ante. Nullam egestas, nunc at rutrum tincidunt, purus metus malesuada ante, at cursus massa turpis sit amet '
+            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum augue sed tellus accumsan, nec congue quam lacinia. Duis ornare congue ante a facilisis. Vestibulum sed magna in ligula aliquam luctus non in ante. Nullam egestas, nunc at rutrum tincidunt, purus metus malesuada ante, at cursus massa turpis sit amet ',
+            circleText:'Explore products'
         },
         {
             icon:IconeFour,
             title:'title h4',
-            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum augue sed tellus accumsan, nec congue quam lacinia. Duis ornare congue ante a facilisis. Vestibulum sed magna in ligula aliquam luctus non in ante. Nullam egestas, nunc at rutrum tincidunt, purus metus malesuada ante, at cursus massa turpis sit amet '
+            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum augue sed tellus accumsan, nec congue quam lacinia. Duis ornare congue ante a facilisis. Vestibulum sed magna in ligula aliquam luctus non in ante. Nullam egestas, nunc at rutrum tincidunt, purus metus malesuada ante, at cursus massa turpis sit amet ',
+            circleText:'Explore Customers'
         }
     ]
     return(
@@ -37,20 +41,20 @@ const ExploreProduct = () => {
                 />
                 <div className="">
                     {productLists.map((list,index) => (
-                        <div key={index} className="flex justify-between gap-36 py-[40px]">
-                        <div className="flex flex-col gap-2">
-                            <div className="flex items-center gap-2">
-                                <div>
-                                    <img src={list.icon} alt="" />
+                        <div key={index} className={`flex py-[40px] gap-40 ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}>
+                            <div className="w-1/2 flex flex-col gap-2">
+                                <div className="flex items-center gap-2">
+                                    <div>
+                                        <img src={list.icon} alt="" />
+                                    </div>
+                                    <h4 className="font-bold text-[#212529] uppercase text-[27px]">{list.title}</h4>
                                 </div>
-                                <h4 className="uppercase">{list.title}</h4>
+                                <p className="font-medium text-lg text-[#212529] opacity-[60%]">{list.text}</p>
                             </div>
-                            <p>{list.text}</p>
-                        </div>
-                        <div className="">
-                            <img className="" src={Explore} alt="" />
-                            <div className=" bg-[#003080] w-[169px] h-[169px] rounded-full"></div>
-                        </div>
+                            <div className="w-1/2 relative">
+                                <img className="w-full" src={Explore} alt="" />
+                                <div className="font-bold text-md text-center flex items-center p-10 absolute left-[-80px] bottom-[43px] bg-[#003080] w-[169px] h-[169px] rounded-full text-white">{list.circleText}</div>
+                            </div>
                     </div>
                     ))}
                 </div>
