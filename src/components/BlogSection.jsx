@@ -1,4 +1,5 @@
-import Banner from '../assets/img/banner.png'
+import SectionTitle from './SectionTitle';
+import Banner from '../assets/img/banner.png';
 
 const BlogSection = () => {
     const Blogs = [
@@ -6,7 +7,7 @@ const BlogSection = () => {
             img:Banner,
             date:'January 06, 2024',
             title:'Lorem ipsum dolor sit amet, consectetur',
-            content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum augue sed tellus accumsan, nec congue quam lacinia. Duis ornare congue ante a facilisis. Vestibulum sed magna in ligula aliquam luctus non in ante. Nullam egestas, nunc at rutrum tincidunt, purus metus malesuada ante, at cursus massa turpis sit amet nulla. Quisque non ante quis lorem fermentum auctor sed sed ligula. Aenean turpis sapien, efficitur quis placerat at, facilisis bibendum erat. Aliquam quis mattis leo, sed egestas augue. Phasellus vitae vulputate nisi, vitae eleifend enim. Aenean rutrum tristique purus,',
+            content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum augue sed tellus accumsan, nec congue quam lacinia. Duis ornare congue ante a facilisis. Vestibulum sed magna in ligula aliquam luctus non in ante. Nullam egestas',
             isFeatured: true
         },
         {
@@ -34,32 +35,36 @@ const BlogSection = () => {
 
     return (
         <>
+        <SectionTitle title={'h2 title one liner'} />
         <div className="container mx-auto p-4">
             <div className="flex flex-wrap md:flex-nowrap">
                 <div className="w-full md:w-1/2 p-4">
                 {featuredPost && (
-                    <div className="bg-gray-200 p-6 rounded-lg shadow-lg">
-                        <img src={Banner} alt="" />
-                        <span>{featuredPost.date}</span>
-                        <h2 className="text-2xl font-bold mb-4">{featuredPost.title}</h2>
-                        <p>{featuredPost.content}</p>
+                    <div className="">
+                        <img className="w-full" src={Banner} alt="" />
+                        <span className="font-medium text-base text-[#95969A] mt-[17px]">{featuredPost.date}</span>
+                        <h2 className="text-2xl font-semibold text-[#212529] mb-4">{featuredPost.title}</h2>
+                        <p className="mt-4 font-medium text-[15px] text-[212529] opacity-[60%]">{featuredPost.content}</p>
                     </div>
                 )}
                 </div>
                 <div className="w-full md:w-1/2 p-4 flex flex-col space-y-4">
                 {regularPosts.map((post, index) => (
-                    <div className='flex'>
+                    <div key={index} className='flex'>
                         <div className="w-1/2">
-                            <img src={Banner} alt="" />
+                            <img className="w-full" src={Banner} alt="" />
                         </div>
-                        <div key={index} className="w-1/2 bg-white p-6 rounded-lg shadow-lg">
-                            <span>{post.date}</span>
-                            <h3 className="text-xl font-bold mb-2">{post.title}</h3>
+                        <div key={index} className="w-1/2 px-4">
+                            <span className="font-medium text-base text-[#95969A] mt-[17px]">{post.date}</span>
+                            <h3 className="leading-6 text-2xl font-semibold text-[#212529] mb-4">{post.title}</h3>
                         </div>
                     </div>
                     
                 ))}
                 </div>
+            </div>
+            <div className='flex justify-center mt-[30px]'>
+                <a className='rounded-[6px] border border-[#003080] py-5 px-[65px] font-bold text-lg text-[#003080]' href="">View all Notice & Events</a>
             </div>
         </div>
         </>
