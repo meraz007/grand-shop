@@ -1,7 +1,19 @@
+import React from 'react';
 import mail from '../assets/img/mail-icon.png'
 import phone from '../assets/img/phone-icon.png'
 import logo from '../assets/img/logo-white-circle.png'
 import location from '../assets/img/location-icon.png'
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
+
+const containerStyle = {
+  width: '400px',
+  height: '400px'
+};
+
+const center = {
+  lat: -3.745,
+  lng: -38.523
+};
 
 const Footer = () => {
     const shopDetailsList = [
@@ -12,7 +24,7 @@ const Footer = () => {
     
     return (
         <>
-            <div className="bg-[#003080] py-[60px] px-[80px]">
+            <div className="flex justify-between bg-[#003080] py-[60px] px-[80px]">
                 <div className="flex justify-between">
                     <div className="flex flex-col gap-2">
                         <div>
@@ -27,6 +39,18 @@ const Footer = () => {
                             </div>
                         ))}
                     </div>
+                </div>
+                <div>
+                <LoadScript  googleMapsApiKey="https://maps.googleapis.com/maps/api/js?sensor=false&callback=myMap">
+                    <GoogleMap
+                        mapContainerStyle={containerStyle}
+                        center={center}
+                        zoom={10}
+                        className="rounded"
+                    >
+                        { /* Child components, such as markers, info windows, etc. */ }
+                    </GoogleMap>
+                    </LoadScript>
                 </div>
             </div>
             <div className="bg-black py-3.5">

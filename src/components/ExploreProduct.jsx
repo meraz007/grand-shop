@@ -53,7 +53,7 @@ const ExploreProduct = () => {
                             </div>
                             <div className="w-1/2 relative">
                                 <img className="w-full" src={Explore} alt="" />
-                                <div className="font-bold text-md text-center flex items-center p-10 absolute left-[-80px] bottom-[43px] bg-[#003080] w-[169px] h-[169px] rounded-full text-white">{list.circleText}</div>
+                                <div className="font-bold text-md text-center flex items-center absolute md:left-[-60px] left-[-80px] bottom-[43px] bg-[#003080] md:w-[120px] md:h-[120px] justify-center rounded-full text-white">{list.circleText}</div>
                             </div>
                     </div>
                     ))}
